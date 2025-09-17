@@ -723,12 +723,12 @@ add_sample_struct <- function(sample_struct, dat) {
       tmp_meanbodywt[["year"]] <= subset_yr_end, ]
     if (nrow(tmp_meanbodywt) > 0) {
       # dummy observation negative to exclued from NLL? (or should the fleet be neg?)
-      tmp_meanbodywt[["Value"]] <- -1
+      tmp_meanbodywt[["obs"]] <- -1
       tmp_meanbodywt <- tmp_meanbodywt[, c(
         "year", "month", "fleet", "part",
-        "type", "Value", "stderr"
+        "type", "obs", "stderr"
       )]
-      tmp_meanbodywt[["Value"]] <- -abs(tmp_meanbodywt[["Value"]])
+      tmp_meanbodywt[["obs"]] <- -abs(tmp_meanbodywt[["Value"]])
       dat[["meanbodywt"]] <- rbind(dat[["meanbodywt"]], tmp_meanbodywt)
     }
   }
