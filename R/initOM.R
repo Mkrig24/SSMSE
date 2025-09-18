@@ -728,7 +728,7 @@ add_sample_struct <- function(sample_struct, dat) {
         "year", "month", "fleet", "part",
         "type", "obs", "stderr"
       )]
-      tmp_meanbodywt[["obs"]] <- -abs(tmp_meanbodywt[["Value"]])
+      tmp_meanbodywt[["obs"]] <- -abs(tmp_meanbodywt[["obs"]])
       dat[["meanbodywt"]] <- rbind(dat[["meanbodywt"]], tmp_meanbodywt)
     }
   }
